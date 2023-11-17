@@ -1,0 +1,44 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <profiles>
+    <profile>
+      <id>common</id>
+      <repositories>
+        <repository>
+          <id>download</id>
+          <name>nexus</name>
+          <url>${nexus.url.dwn}</url>
+          <layout>default</layout>
+          <snapshots>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+
+        </repository>
+      </repositories>
+    </profile>
+    <profile>
+      <id>test</id>
+    </profile>
+    <profile>
+      <id>dev</id>
+    </profile>
+    <profile>
+      <id>stg</id>
+    </profile>
+    <profile>
+      <id>prd</id>
+    </profile>
+  </profiles>
+  <servers>
+    <server>
+      <id>releases</id>
+      <username>${nexus.repo.rel.username}</username>
+      <password>${nexus.repo.rel.password}</password>
+    </server>
+    <server>
+      <id>download</id>
+      <username>${nexus.repo.dwn.username}</username>
+      <password>${nexus.repo.dwn.password}</password>
+    </server>
+  </servers>
+</settings>
